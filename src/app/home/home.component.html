@@ -1,0 +1,10 @@
+<div class="header">
+  <h1>O que você vai <i>comer</i> hoje?</h1>
+  <p>Escolha uma receita para preparar e se deliciar!</p>
+</div>
+<h2>Receitas mais buscadas</h2>
+<div class="popular-recipes">
+@for (recipeItem of allRecipeItems() | popularRecipes; track $index) {
+  <app-recipe-item [recipeItem]="recipeItem"></app-recipe-item>
+}
+</div>

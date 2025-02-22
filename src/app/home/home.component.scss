@@ -1,0 +1,25 @@
+.header {
+  margin: 100px 0 60px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Monomakh", serif;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.popular-recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 30px;
+  padding: 10px;
+}
+
+.popular-recipes app-recipe-item {
+  border-radius: 1rem;
+  background-color: rgb(245, 245, 234);
+}
