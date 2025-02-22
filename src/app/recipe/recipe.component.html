@@ -1,0 +1,11 @@
+@if (error()) {
+  <div class="alert alert-danger">
+      {{ error() }}
+  </div>
+}
+@else {
+  <p>{{recipeItem()?.receita}}</p>
+  <p>{{recipeItem()?.ingredientes}}</p>
+}
+
+
