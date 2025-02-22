@@ -1,0 +1,15 @@
+main {
+  margin: 0 auto;
+  max-width: 1000px;
+  min-width: 200px;
+}
+
+app-header {
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  margin-top: 40px;
+  padding: 0 20px;
+}
