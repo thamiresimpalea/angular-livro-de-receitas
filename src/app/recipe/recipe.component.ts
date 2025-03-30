@@ -12,11 +12,11 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrl: './recipe.component.scss'
 })
 export class RecipeComponent {
+  constructor(private route: ActivatedRoute) {}
   recipeService = inject(RecipesService);
   id = signal<string>('');
   recipeItem = signal<RecipeItem | null>(null);
   error = signal<string>('');
-  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -30,11 +30,11 @@ export class RecipeComponent {
         catchError((error: HttpErrorResponse) => {
           console.error('Error loading recipe', error);
           this.error.set(error.message);
-          throw error
+          throw error;
         })
       )
       .subscribe((recipe) => {
         this.recipeItem.set(recipe);
-      })
+      });
   }
 }
