@@ -6,4 +6,9 @@
     <h1>Doces</h1>
     <p>Escolha uma receita para preparar e se deliciar!</p>
   </div>
+  <div class="recipes">
+  @for (recipeItem of allRecipeItems() ; track $index) {
+    <app-recipe-item [recipeItem]="recipeItem"></app-recipe-item>
+  }
+  </div>
 }
