@@ -1,7 +1,5 @@
 @if (error()) {
-  <div class="alert alert-danger">
-      {{ error() }}
-  </div>
+  <p>Ops! Não foi possível carregar a página. Tente novamente mais tarde.</p>
 }
 @else {
   <p>{{recipeItem()?.receita}}</p>
