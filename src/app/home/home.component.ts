@@ -15,18 +15,20 @@ import { PopularRecipesPipe } from '../pipes/popular-recipes.pipe';
 export class HomeComponent {
   recipeService = inject(RecipesService);
   allRecipeItems = signal<Array<RecipeItem>>([]);
-  error = signal<string>("");
+  error = signal<string>('');
+
   ngOnInit(): void {
     this.recipeService
       .getRecipes()
       .pipe(
         catchError((error: HttpErrorResponse) => {
           console.error('Error loading recipes', error);
-          throw error
+          this.error.set(error.message);
+          throw error;
         })
       )
       .subscribe((recipes) => {
         this.allRecipeItems.set(recipes);
-      })
+      });
   }
 }
