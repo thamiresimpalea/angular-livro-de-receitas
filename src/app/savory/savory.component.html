@@ -1,4 +1,14 @@
-<div class="header">
-  <h1>Salgados</h1>
-  <p>Escolha uma receita para preparar e se deliciar!</p>
-</div>
+@if (error()) {
+  <p>Ops! Não foi possível carregar a página. Tente novamente mais tarde.</p>
+}
+@else {
+  <div class="header">
+    <h1>Salgados</h1>
+    <p>Escolha uma receita para preparar e se deliciar!</p>
+  </div>
+  <div class="recipes">
+  @for (recipeItem of allRecipeItems() ; track $index) {
+    <app-recipe-item [recipeItem]="recipeItem"></app-recipe-item>
+  }
+  </div>
+}
