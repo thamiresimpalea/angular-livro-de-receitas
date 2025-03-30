@@ -1,4 +1,9 @@
-<div class="header">
-  <h1>Doces</h1>
-  <p>Escolha uma receita para preparar e se deliciar!</p>
-</div>
+@if (error()) {
+  <p>Ops! Não foi possível carregar a página. Tente novamente mais tarde.</p>
+}
+@else {
+  <div class="header">
+    <h1>Doces</h1>
+    <p>Escolha uma receita para preparar e se deliciar!</p>
+  </div>
+}
