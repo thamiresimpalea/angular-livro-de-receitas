@@ -14,4 +14,4 @@ type IngredienteBase = {
   nomesIngrediente: string[];
   receita_id: number;
   created_at: string;
-};
+}
